@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("DemoGuass")]
+[assembly: AssemblyTitle("ForcestClass")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DemoGuass")]
+[assembly: AssemblyProduct("ForcestClass")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("6bb07f6c-2045-4e05-81c0-b874f96456b5")]
+[assembly: Guid("a6d2f60c-19d8-44b2-a2de-03756c1cfc5c")]
 
 // 程序集的版本信息由下面四个值组成:
 //

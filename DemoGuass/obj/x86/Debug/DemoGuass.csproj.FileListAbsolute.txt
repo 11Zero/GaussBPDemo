@@ -1,8 +1,0 @@
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\bin\Debug\DemoGuass.exe
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\bin\Debug\DemoGuass.pdb
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\obj\x86\Debug\DemoGuass.Form1.resources
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\obj\x86\Debug\DemoGuass.Properties.Resources.resources
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\obj\x86\Debug\DemoGuass.csproj.GenerateResource.Cache
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\obj\x86\Debug\DemoGuass.exe
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\obj\x86\Debug\DemoGuass.pdb
-D:\C++公用文件夹\My Projects_VS2010\DemoGuass\DemoGuass\obj\x86\Debug\DemoGuass.csprojResolveAssemblyReference.cache
