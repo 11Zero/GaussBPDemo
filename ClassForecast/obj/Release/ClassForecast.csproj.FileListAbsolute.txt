@@ -1,0 +1,4 @@
+D:\C++公用文件夹\My Projects_VS2010\ClassForecast\ClassForecast\bin\Release\ClassForecast.dll
+D:\C++公用文件夹\My Projects_VS2010\ClassForecast\ClassForecast\bin\Release\ClassForecast.pdb
+D:\C++公用文件夹\My Projects_VS2010\ClassForecast\ClassForecast\obj\Release\ClassForecast.dll
+D:\C++公用文件夹\My Projects_VS2010\ClassForecast\ClassForecast\obj\Release\ClassForecast.pdb
