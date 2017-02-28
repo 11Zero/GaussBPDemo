@@ -20,8 +20,8 @@ namespace ClassForecast
 
         public int input_row = new int();
         public int input_test_row = new int();
-        private int input_col = new int();
-        private int sample_num = new int();//sample_row应该等于input_row
+        public int input_col = new int();
+        public int sample_num = new int();//sample_row应该等于input_row
         //private int forecast_num = new int();
 
 
@@ -194,11 +194,15 @@ namespace ClassForecast
         {
             while (input.Count < input_col)
             {
-                input.Enqueue(new Queue<double>());
+                Queue<double> tempQueue = new Queue<double>();
+                tempQueue.Enqueue(0.0);
+                input.Enqueue(tempQueue);
             }
             while (input_test.Count < input_col)
             {
-                input_test.Enqueue(new Queue<double>());
+                Queue<double> tempQueue = new Queue<double>();
+                tempQueue.Enqueue(0.0);
+                input_test.Enqueue(tempQueue);
             }
             if (input_row != input.ElementAt(0).Count || input_test_row != input_test.ElementAt(0).Count)
             {
@@ -209,36 +213,22 @@ namespace ClassForecast
                     output.Clear();
                     int i = 0;
                     int FirstPos = items_count - (input_row + input_test_row) * input_col;
+                    Queue<double> tempQueue = new Queue<double>();
                     for (int j = 0; j < input_col; j++)
                     {
-                        input.Enqueue(new Queue<double>());
+                        tempQueue.Clear();
                         for (int k = 0; k < input_row; k++)
                         {
-                            input.ElementAt(j).Enqueue(source_data.ElementAt(FirstPos + i++));
+                            tempQueue.Enqueue(source_data.ElementAt(FirstPos + i++));
                         }
-                        input_test.Enqueue(new Queue<double>());
+                        input.Enqueue(tempQueue);
+                        tempQueue.Clear();
                         for (int k = 0; k < input_test_row; k++)
                         {
-                            input_test.ElementAt(j).Enqueue(source_data.ElementAt(FirstPos + i++));
+                            tempQueue.Enqueue(source_data.ElementAt(FirstPos + i++));
                         }
+                        input_test.Enqueue(tempQueue);
                     }
-
-
-
-                    //int i = 0;
-                    //for (int j = 0; j < input_col; j++)
-                    //{
-                    //    input.Enqueue(new Queue<double>());
-                    //    for (int k = 0; k < input_row; k++)
-                    //    {
-                    //        input.ElementAt(j).Enqueue(source_data.ElementAt(items_count - 1 - i++));
-                    //    }
-                    //    input_test.Enqueue(new Queue<double>());
-                    //    for (int k = 0; k < input_test_row; k++)
-                    //    {
-                    //        input_test.ElementAt(j).Enqueue(source_data.ElementAt(items_count - 1 - i++));
-                    //    }
-                    //}
                 }
                 else
                 {
@@ -247,30 +237,33 @@ namespace ClassForecast
                     output.Clear();
                     int i = 0, l = 0;
                     int ZeroCount = (input_row + input_test_row) * input_col - items_count;
+                    Queue<double> tempQueue = new Queue<double>();
                     for (int j = 0; j < input_col; j++)
                     {
-                        input.Enqueue(new Queue<double>());
+                        tempQueue.Clear();
                         for (int k = 0; k < input_row; k++)
                         {
                             if (l < ZeroCount)
                             {
-                                input.ElementAt(j).Enqueue(new double());
+                                tempQueue.Enqueue(new double());
                                 l++;
                             }
                             else
-                                input.ElementAt(j).Enqueue(source_data.ElementAt(i++));
+                                tempQueue.Enqueue(source_data.ElementAt(i++));
                         }
-                        input_test.Enqueue(new Queue<double>());
+                        input.Enqueue(tempQueue);
+                        tempQueue.Clear();
                         for (int k = 0; k < input_test_row; k++)
                         {
                             if (l < ZeroCount)
                             {
-                                input_test.ElementAt(j).Enqueue(new double());
+                                tempQueue.Enqueue(new double());
                                 l++;
                             }
                             else
-                                input_test.ElementAt(j).Enqueue(source_data.ElementAt(i++));
+                                tempQueue.Enqueue(source_data.ElementAt(i++));
                         }
+                        input_test.Enqueue(tempQueue);
                     }
 
                 }
@@ -726,7 +719,7 @@ namespace ClassForecast
             {
                 result.Rows.Add("预测",yun[i]);
             }
-            return result;
+            return result.Copy();
         }
 
     }
